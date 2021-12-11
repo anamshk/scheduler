@@ -8,6 +8,7 @@ export default function Confirm (props) {
     "button__cancel": props.Cancel
   });
 
+
   return (
     <main className="appointment__card appointment__card--confirm">
       <h1 className="text--semi-bold">Delete the appointment?</h1>
