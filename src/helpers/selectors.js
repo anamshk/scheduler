@@ -1,6 +1,3 @@
-import Appointment from "components/Appointment";
-import DayList from "components/DayList";
-import React from "react";
 
 export function getAppointmentsForDay(state, day) {
   const arr = [];
@@ -16,4 +13,17 @@ export function getAppointmentsForDay(state, day) {
     }
   }
   return arr;
+}
+
+
+export function getInterview(state, interview) {
+  if (!interview) {
+    return null
+  }
+
+  const obj = {};
+  obj.student = interview.student;
+  const interviewer = state.interviewers[interview.interviewer]
+  obj.interviewer = interviewer
+  return obj;
 }
