@@ -15,15 +15,30 @@ export function getAppointmentsForDay(state, day) {
   return arr;
 }
 
+export function getInterviewersForDay(state, day) {
+  const arr = [];
+  for (let d of state.days) {
+    if (day === d.name) {
+      for (let id of d.interviewers) {
+        for (let interviewer in state.interviewers) {
+          if (id === state.interviewers[interviewer].id) {
+            arr.push(state.interviewers[interviewer]);
+          }
+        }
+      }
+    }
+  }
+  return arr;
+}
 
 export function getInterview(state, interview) {
   if (!interview) {
     return null
   }
-
   const obj = {};
   obj.student = interview.student;
   const interviewer = state.interviewers[interview.interviewer]
   obj.interviewer = interviewer
   return obj;
 }
+
