@@ -114,7 +114,7 @@ storiesOf("InterviewerListItem", module)
     { id: 2, name: "Tori Malcolm", avatar: "https://i.imgur.com/Nmx0Qxo.png" },
     { id: 3, name: "Mildred Nazir", avatar: "https://i.imgur.com/T2WwVfS.png" },
     { id: 4, name: "Cohana Roy", avatar: "https://i.imgur.com/FK8V841.jpg" },
-    { id: 5, name: "Sven Jones", avatar: "https://i.imgur.com/twYrpay.jpg" }
+    { id: 5, name: "Sven Jones", avatar: "https://i.imgur.com/twYrpay.jpg" },
   ];
     
 storiesOf("InterviewerList", module)
@@ -147,9 +147,9 @@ storiesOf("InterviewerList", module)
   .add("Appointment with Time", () => <Appointment time="12pm" />)
   .add("Header", () => <Header time="12pm" />)
   .add("Empty", () => <Empty onAdd={action("onAdd")}/>)
-  .add("Show", () => <Show interviewer={interviewer.name} onEdit={action("onEdit")} onDelete={action("onDelete")}/>)
+  .add("Show", () => <Show student={student} interviewer={interviewer.name} onEdit={action("onEdit")} onDelete={action("onDelete")}/>)
   .add("Confirm", () => <Confirm onConfirm={action("onConfirm")} onCancel={action("onCancel")}/>)
-  .add("Status", () => <Status />)
+  .add("Status", () => <Status text=""/>)
   .add("Error", () => <Error onClose={action("onClose")}/>)
   .add("Create", () => <Form interviewers={interviewers} onCancel={action("onCancel")} onSave={action("onSave")}/>)
   .add("Edit",  () => <Form student="Anam"  interviewer={1} interviewers={interviewers}  onCancel={action("onCancel")} onSave={action("onSave")}/>)
@@ -162,7 +162,6 @@ storiesOf("InterviewerList", module)
   .add("Appointment Booked", () => (
     <Fragment>
       <Appointment 
-        
         id={1}
         time="4pm"
         interview={{ student: "Lydia Miller-Jones", interviewer }}
