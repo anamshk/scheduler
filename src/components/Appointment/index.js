@@ -11,6 +11,10 @@ import Confirm from "components/Appointment/Confirm.js";
 
 export default function Appointment(props) {
 
+  console.log(props.time);
+  console.log(props);
+
+
   const EMPTY = "EMPTY";
   const CREATE = "CREATE";
   const SHOW = "SHOW";
@@ -31,7 +35,7 @@ export default function Appointment(props) {
       student: name,
       interviewer,
     };
-    console.log("HEEEREE");
+    
     transition(SAVING);
 
     props.bookInterview(props.id, interview)
@@ -48,7 +52,7 @@ export default function Appointment(props) {
     .catch((error) => transition(ERROR_DELETE, true));
   }
 
-  return (
+  return props.time !== '5pm' ? (
     <>
       <Header time={props.time}/> 
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
@@ -99,5 +103,5 @@ export default function Appointment(props) {
 
     </>
     
-  )
+  ) : <Header time={props.time}/> 
 };

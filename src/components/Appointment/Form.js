@@ -4,14 +4,14 @@ import Button from "components/Button";
 
 
 export default function Form(props){
-  const [name, setName] = useState(props.name || "");
+  const [student, setStudent] = useState(props.student || "");
 
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
 
   const [error, setError] = useState("");
 
   const reset = (() => {
-    setName("")
+    setStudent("")
     setInterviewer("")
   });
   
@@ -20,14 +20,14 @@ export default function Form(props){
     props.onCancel();
   });
 
-  function validate() {
-    if (name === "") {
+  function validate(value) {
+    if (student === "") {
       setError("Student name cannot be blank");
       return;
     }
   
     setError("");
-    props.onSave(name, interviewer);
+    props.onSave(student, interviewer);
   }
 
 
@@ -41,8 +41,8 @@ export default function Form(props){
         name="name"
         type="text"
         placeholder="Enter Student Name"
-        value={name}
-        onChange={(event) => setName(event.target.value)}
+        value={student}
+        onChange={(event) => setStudent(event.target.value)}
         data-testid="student-name-input"
       />
     </form>
