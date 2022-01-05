@@ -44,7 +44,6 @@ export default function Appointment(props) {
   }
 
   function cancel(name, interviewer) {
-    console.log("HEEEREE");
     transition(DELETING, true);
 
     props.cancelInterview(props.id)
@@ -97,7 +96,7 @@ export default function Appointment(props) {
         <Confirm
         cancelInterview={props.cancelInterview}
         onConfirm={cancel}
-        onCancel={() => back(EDIT)}
+        onCancel={back}
         />
       )}
 
