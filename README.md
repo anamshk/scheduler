@@ -1,6 +1,4 @@
 # Interview Scheduler
-
-
 Created a modern client application using the React view library.
 
 Development focuses on a single page application (SPA) called Interview Scheduler, built using React.
