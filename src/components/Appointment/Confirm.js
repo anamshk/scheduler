@@ -1,13 +1,7 @@
 import React from "react";
 import Button from "components/Button";
-import classNames from "classnames";
 
 export default function Confirm (props) {
-  const confirmClass = classNames ("confirm_button", {
-    "button__confirm":props.Confirm,
-    "button__cancel": props.Cancel
-  });
-
 
   return (
     <main className="appointment__card appointment__card--confirm">
