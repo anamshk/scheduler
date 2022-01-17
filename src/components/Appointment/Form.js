@@ -8,6 +8,8 @@ export default function Form(props){
 
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
 
+  const { interviewers, onSave, onCancel } = props;
+
   const [error, setError] = useState("");
 
   const reset = (() => {
@@ -16,8 +18,8 @@ export default function Form(props){
   });
   
   const cancel = (() => {
+    onCancel();
     reset();
-    props.onCancel();
   });
 
   function validate(value) {
@@ -26,14 +28,13 @@ export default function Form(props){
       return;
     }
 
-    console.log("IM HERE", interviewer)
     if (!interviewer || interviewer.name === "") {
       setError("Please select an Interviewer");
       return;
     }
   
     setError("");
-    props.onSave(student, interviewer);
+    onSave(student, interviewer);
   }
 
 
@@ -55,7 +56,7 @@ export default function Form(props){
     <section className="appointment__validation">{error}</section>
     <InterviewerList 
       value={interviewer}
-      interviewers={props.interviewers}
+      interviewers={interviewers}
       onChange={setInterviewer}
     />
     <form onSubmit={event => event.preventDefault()}></form>
