@@ -22,7 +22,7 @@ Performed testing through the project using Jest and Cypress.
 
 !["The delete form when the interview needs to deleted"](https://github.com/anamshk/scheduler/blob/master/docs/Interview_added.png?raw=true)
 
-Dependencies
+# Dependencies
 
 React
 Axios
@@ -30,17 +30,17 @@ Webpack, Babel
 Storybook, Webpack Dev Server, Jest, Testing Library, Cypress
 
 
-Interview Scheduler
-Setup
+# Interview Scheduler
+# Setup
 
 Install dependencies with npm install.
 
-Running Webpack Development Server
+# Running Webpack Development Server
 
 npm start
-Running Jest Test Framework
+# Running Jest Test Framework
 
 npm test
-Running Storybook Visual Testbed
+# Running Storybook Visual Testbed
 
 npm run storybook
